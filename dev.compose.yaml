@@ -51,27 +51,27 @@ services:
       timeout: 5s
       retries: 5
 
-  frontend:
-    build:
-      context: ./frontend
-      dockerfile: Dockerfile
-    container_name: dp-docs-frontend
-    restart: unless-stopped
-    volumes:
-      - /etc/localtime:/etc/localtime
-      - storage:/usr/share/nginx/html/storage/storage
-    env_file:
-      - .env
-    networks:
-      - dp_docs_network
-    ports:
-      - "${FRONTEND_PORT:-38534}:${FRONTEND_PORT:-38534}"
-    depends_on:
-      - backend
-    develop:
-      watch:
-        - action: rebuild
-          path: ./frontend
+  # frontend:
+  #   build:
+  #     context: ./frontend
+  #     dockerfile: Dockerfile
+  #   container_name: dp-docs-frontend
+  #   restart: unless-stopped
+  #   volumes:
+  #     - /etc/localtime:/etc/localtime
+  #     - storage:/usr/share/nginx/html/storage/storage
+  #   env_file:
+  #     - .env
+  #   networks:
+  #     - dp_docs_network
+  #   ports:
+  #     - "${FRONTEND_PORT:-38534}:${FRONTEND_PORT:-38534}"
+  #   depends_on:
+  #     - backend
+  #   develop:
+  #     watch:
+  #       - action: rebuild
+  #         path: ./frontend
 
 networks:
   dp_docs_network:
