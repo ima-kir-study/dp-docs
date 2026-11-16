@@ -1,6 +1,6 @@
 # DPdocs
-Run backend:
+## Development
 ```sh
-cd backend
-uv run fastapi dev --port 49558 src
+cp .env.example .env
+make dev
 ```
