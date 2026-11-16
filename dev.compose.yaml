@@ -65,7 +65,7 @@ services:
   #   networks:
   #     - dp_docs_network
   #   ports:
-  #     - "${FRONTEND_PORT:-38534}:${FRONTEND_PORT:-38534}"
+  #     - "${FRONTEND_PORT:-46214}:${FRONTEND_PORT:-46214}"
   #   depends_on:
   #     - backend
   #   develop:
